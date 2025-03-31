@@ -4,6 +4,10 @@ import stock_analysis.constants as constants
 import matplotlib.pyplot as plt
 logger = logging.getLogger(__name__)
 
+plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'Arial Unicode MS']  # 指定默认字体为黑体
+plt.rcParams['axes.unicode_minus'] = False     # 解决负号'-'显示为方框的问题
+
+# 图表并在一起
 # 获取行业板块资金流向数据（今日）
 fund_flow_df = ak.stock_sector_fund_flow_rank(indicator="今日", sector_type="行业资金流")
 logger.info(fund_flow_df);
